@@ -50,4 +50,4 @@ class User(Resource):
         app.logger.debug('DEBUG : %s', user)
         return marshal(user, Users.response_fields), 200, {'Content-Type': 'application/json'}
 
-api.add_resource(User, '', '/id')
+api.add_resource(User, '', '/<id>')
