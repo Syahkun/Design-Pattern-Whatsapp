@@ -63,10 +63,12 @@ def after_request(response):
 
 # Import Blueprint
 from blueprints.user.resources import bp_user
-from blueprints.personal_messages.resources import bp_personal_message
+from blueprints.personal_message.resources import bp_personal_message
+from blueprints.messages.resources import bp_message
 
 # Register Blueprint
 app.register_blueprint(bp_user, url_prefix='/user')
 app.register_blueprint(bp_personal_message, url_prefix='/pm')
+app.register_blueprint(bp_message, url_prefix='/messages')
 
 db.create_all()
